@@ -31,6 +31,7 @@ const Add = () => {
       await res.json()
       setData({
         ...data,
+        date: new Date().toLocaleString(),
         aplicant: '',
         attended: '',
         problem: '',
