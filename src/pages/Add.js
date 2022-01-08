@@ -1,83 +1,116 @@
-import { useState } from "react";
-import { useHistory } from "react-router-dom";
+import { useState } from 'react'
+import { useHistory } from 'react-router-dom'
+
+const INITIAL_STATE = {
+  date: new Date().toLocaleString(),
+  applicant: '',
+  attended: '',
+  problem: '',
+  solution: ''
+}
 
 const Add = () => {
-  const history = useHistory();
-  const [data, setData] = useState({
-    name: "",
-    email: "",
-    message: "",
-    date: new Date().toString(),
-  });
+  const history = useHistory()
+  const [data, setData] = useState(INITIAL_STATE)
+
+  const { date, aplicant, attended, problem, solution } = data
 
   const handleChange = (e) =>
-    setData({ ...data, [e.target.name]: e.target.value });
+    setData({ ...data, [e.target.name]: e.target.value })
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
+    e.preventDefault()
     try {
-      const res = await fetch(
-        "https://sheet.best/api/sheets/bff990d0-8ada-43e9-97eb-0ad668bb19ec",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(data),
-        }
-      );
+      const res = await fetch(process.env.REACT_APP_URL_SHEETS, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify([[date, aplicant, attended, problem, solution]])
+      })
+      await res.json()
+      setData({
+        ...data,
+        aplicant: '',
+        attended: '',
+        problem: '',
+        solution: ''
+      })
       if (res.ok) {
-        history.replace("/");
+        history.replace('/')
       }
     } catch (error) {
-      console.log(error);
+      console.log(error)
     }
-  };
+  }
   return (
-    <form style={{ maxWidth: 500, margin: "auto" }} onSubmit={handleSubmit}>
-      <h1 className="text-muted text-center">Add</h1>
+    <form
+      style={{
+        maxWidth: 500,
+        margin: 'auto',
+        marginTop: '4rem',
+        paddingBottom: '2rem'
+      }}
+      onSubmit={handleSubmit}
+    >
+      <h1 className="text-muted text-center">Nuevo reporte</h1>
       <div className="mb-3">
-        <label htmlFor="name" className="form-label">
-          Name
+        <label htmlFor="aplicant" className="form-label">
+          Solicitante
         </label>
         <input
           type="text"
           className="form-control"
-          name="name"
-          value={data.name}
+          name="aplicant"
+          value={aplicant || ''}
           onChange={handleChange}
+          autoComplete="off"
         />
       </div>
       <div className="mb-3">
-        <label htmlFor="email" className="form-label">
-          Email
+        <label htmlFor="attended" className="form-label">
+          Atendió
         </label>
         <input
-          type="email"
+          type="text"
           className="form-control"
-          name="email"
-          value={data.email}
+          name="attended"
+          value={attended}
           onChange={handleChange}
+          autoComplete="off"
         />
       </div>
       <div className="mb-3">
-        <label htmlFor="message" className="form-label">
-          Message
+        <label htmlFor="problem" className="form-label">
+          Problema
         </label>
         <textarea
-          name="message"
+          name="problem"
           cols="30"
           rows="3"
           className="form-control"
-          value={data.message}
+          value={problem}
+          onChange={handleChange}
+        />
+      </div>
+      <div className="mb-3">
+        <label htmlFor="solution" className="form-label">
+          Solución
+        </label>
+        <textarea
+          name="solution"
+          cols="30"
+          rows="3"
+          className="form-control"
+          value={solution}
           onChange={handleChange}
         />
       </div>
       <div className="text-center">
-        <button className="btn btn-primary">Add</button>
+        <button className="btn btn-primary">Aceptar</button>
       </div>
     </form>
-  );
-};
+  )
+}
 
-export default Add;
+export default Add
