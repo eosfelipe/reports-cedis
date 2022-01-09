@@ -3,7 +3,7 @@ import { useHistory } from 'react-router-dom'
 
 const INITIAL_STATE = {
   date: new Date().toLocaleString(),
-  applicant: '',
+  aplicant: '',
   attended: '',
   type: '',
   problem: '',
@@ -27,7 +27,9 @@ const Add = () => {
         headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify([[date, aplicant, attended, problem, solution]])
+        body: JSON.stringify([
+          [date, aplicant, attended, type, problem, solution]
+        ])
       })
       await res.json()
       setData({
