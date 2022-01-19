@@ -43,7 +43,7 @@ const Home = () => {
     >
       {data?.map((item, i) => (
         <div className="accordion-item" key={i}>
-          <h2 className="accordion-header" id={`heading${i}`}>
+          <div className="accordion-header" id={`heading${i}`}>
             <button
               className="accordion-button"
               type="button"
@@ -52,10 +52,18 @@ const Home = () => {
               aria-expanded="true"
               aria-controls={`collapse${i}`}
             >
+              <span
+                className={`badge bg-${
+                  item.tipo === 'operativo' ? 'danger' : 'info'
+                }`}
+              >
+                {item.tipo}
+              </span>
+              &nbsp;
               {item.fecha}
               {console.log(item)}
             </button>
-          </h2>
+          </div>
           <div
             id={`collapse${i}`}
             className="accordion-collapse collapse"
@@ -63,19 +71,10 @@ const Home = () => {
             data-bs-parent="#accordionExample"
           >
             <div className="accordion-body">
-              <div className="d-flex justify-content-between align-items-center">
-                <span>
-                  <strong className="display-6">{item.solicitante}</strong> ---{' '}
-                  {item.problema}
-                </span>
-                <span>
-                  <button
-                    className="btn btn-sm btn-danger ms-1"
-                    onClick={() => handleDelete(i)}
-                  >
-                    Delete
-                  </button>
-                </span>
+              <div className="d-flex flex-column">
+                <p className="fw-bold">{item.solicitante}</p>
+                <p className="lead">{item.problema}</p>
+                <p className="lead">{item.solucion}</p>
               </div>
             </div>
           </div>

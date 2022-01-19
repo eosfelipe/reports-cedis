@@ -5,6 +5,7 @@ const INITIAL_STATE = {
   date: '',
   applicant: '',
   attended: '',
+  type: '',
   problem: '',
   solution: ''
 }
@@ -13,7 +14,7 @@ const Add = () => {
   const history = useHistory()
   const [data, setData] = useState(INITIAL_STATE)
 
-  const { date, aplicant, attended, problem, solution } = data
+  const { date, aplicant, attended, type, problem, solution } = data
 
   const handleChange = (e) =>
     setData({ ...data, [e.target.name]: e.target.value })
@@ -27,7 +28,9 @@ const Add = () => {
         headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify([[date, aplicant, attended, problem, solution]])
+        body: JSON.stringify([
+          [date, aplicant, attended, type, problem, solution]
+        ])
       })
       await res.json()
       setData({
@@ -35,6 +38,7 @@ const Add = () => {
         date: '',
         aplicant: '',
         attended: '',
+        type: '',
         problem: '',
         solution: ''
       })
@@ -81,6 +85,21 @@ const Add = () => {
           onChange={handleChange}
           autoComplete="off"
         />
+      </div>
+      <div className="mb-3">
+        <label htmlFor="type" className="form-label">
+          Tipo
+        </label>
+        <select
+          name="type"
+          className="form-select"
+          aria-label="Default select"
+          onChange={handleChange}
+        >
+          <option defaultChecked>Seleccionar</option>
+          <option value="operativo">Operativo</option>
+          <option value="sistema">Sistema</option>
+        </select>
       </div>
       <div className="mb-3">
         <label htmlFor="problem" className="form-label">
