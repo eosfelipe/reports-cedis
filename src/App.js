@@ -3,6 +3,7 @@ import Navbar from './components/Navbar'
 import Home from './pages/Home'
 import Add from './pages/Add'
 import Edit from './pages/Edit'
+import Login from './pages/Login'
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/add" component={Add} />
+          <Route exact path="/login" component={Login} />
           {/* <Route exact path="/edit/:rowIndex" component={Edit} /> */}
         </Switch>
       </div>

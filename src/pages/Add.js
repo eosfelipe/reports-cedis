@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { useHistory } from 'react-router-dom'
 
 const INITIAL_STATE = {
-  date: new Date().toLocaleString(),
+  date: '',
   applicant: '',
   attended: '',
   problem: '',
@@ -21,6 +21,7 @@ const Add = () => {
   const handleSubmit = async (e) => {
     e.preventDefault()
     try {
+      setData({ ...data, date: new Date().toLocaleString() })
       const res = await fetch(process.env.REACT_APP_URL_SHEETS, {
         method: 'POST',
         headers: {
@@ -31,7 +32,7 @@ const Add = () => {
       await res.json()
       setData({
         ...data,
-        date: new Date().toLocaleString(),
+        date: '',
         aplicant: '',
         attended: '',
         problem: '',
