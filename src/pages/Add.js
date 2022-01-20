@@ -17,12 +17,15 @@ const Add = () => {
   const { date, aplicant, attended, type, problem, solution } = data
 
   const handleChange = (e) =>
-    setData({ ...data, [e.target.name]: e.target.value })
+    setData({
+      ...data,
+      date: new Date().toLocaleString(),
+      [e.target.name]: e.target.value
+    })
 
   const handleSubmit = async (e) => {
     e.preventDefault()
     try {
-      setData({ ...data, date: new Date().toLocaleString() })
       const res = await fetch(process.env.REACT_APP_URL_SHEETS, {
         method: 'POST',
         headers: {
