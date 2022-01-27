@@ -1,14 +1,16 @@
 import { Link } from 'react-router-dom'
 import { useEffect, useState } from 'react'
-
+import { ClimbingBoxLoader } from 'react-spinners'
 const Home = () => {
   const [data, setData] = useState()
+  const [loading, setLoading] = useState(true)
 
   const getData = async () => {
     try {
       const res = await fetch(process.env.REACT_APP_URL_SHEETS)
       const { data } = await res.json()
       setData(data)
+      setLoading(!loading)
     } catch (error) {
       console.log(error)
     }
@@ -33,6 +35,14 @@ const Home = () => {
     } catch (error) {
       console.log(error)
     }
+  }
+
+  if (loading) {
+    return (
+      <div className="loader">
+        <ClimbingBoxLoader color={'#007ab4'} loading={loading} />
+      </div>
+    )
   }
 
   return (
