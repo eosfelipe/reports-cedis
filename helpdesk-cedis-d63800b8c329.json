@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "helpdesk-cedis",
+  "private_key_id": "d63800b8c32961a4096ca1e0ffe90f6db1e69c35",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQDIl/X1AVZJANMy\nVR9EVlIGhTJeK9KdpYSuBscfBBhzoXd0K1sYw74sLWn0Rp0bktJSRPOJovKD2MgU\n9w8AIQDQb+qPaRGZ3jQdLNljvE/iI1VH46+hRp48v+jpi0SmtXXbhdfIcEy/eVi6\nfxoeBkUs/jrzVbvXEmDblBadtJzICmjift5f1X7XT7dV8Hh0R7XKFya+w0xcP7zQ\nTrrYUmTAAZvSow1p5PGthtiV8ZqmGVLG85V1Md8FF2my/cH43evwvwYxoPdDQEjO\nOtCF7CfVA2LgGo2YGNLuhoWw/di1tzrTqx+OkHLdPbzlsosXhXxbfdbN8mvEofyG\nwUqsfl6NAgMBAAECggEALXrexjUOZjDssY3BMBJOOLI8cEOJVjrv8TESNoMMNDNY\nzRsDZYMD/CozyrGz70uDqil9+ifaym/9NVuqqAHTmG63hNpypitOL4s6orVQe1o9\nfLYv3OYQ/H8ahNERuKaN2T7oZMapcARITMiCmGodhw0BOqimlSXSlhZmZk1L+sKS\nXBXF4ppjN/SanYUfP4Rd7gy/IUbcgmmKCY2awKIMuiKF1X1jyPK9h4hC5v79kQqm\nZtGrFuRfo+GT3wEJFz7x9aCxekhBjMHFo3Rt0YYuDaI/83cDBTJJl5Es7XTVz6zH\nhlIkALgsj/HgZrCDgWC6+04TLTa8xqxOREMBeyAbgQKBgQD1kcWW5Z9Q3bsGmZxe\nm5bi6R7olHxqQv4KMriAw5SmlmcD8vFHfYAEOqXRUezKOCGzzuKYolY1gRstU5CN\ndUBhyug50J5HcQ7qqMpKQcD+t/OcaLYo3f+ZQ/sxCHwjaawC9O196V+h/d6g3P/l\nJ5yvS+HhxYzKZEqyibhalBrV4QKBgQDRHSOUjT6bgjCH1TGl0WR1dUMQSPGoK9zZ\n04kpjf/k/h1TFGj+psOtO6XOX1P4UDFHCxXmOi/z3rCxT4JKlEHy407hRxYFK+Ek\n/rnGnbBCSalKFKfVy3Wter0lt3KuI20BIg8H84JJAXExj1uxJ6PPuxWrRanWsRt4\n6M3HfDOGLQKBgAej5Gjgdgd3DpWS++l5n8UpiZuk2wYXVX4Nu+3Np/dS4Juf2F/o\nCK6ZAIW1rc9Q1cOZYTVsf5Aklyre2bV8+2bPgFAkLHh+jP9CByEuUIncQUkRfPFi\njsw+8DbDU9FqPT7OTgFH3IDWvDF3DsMba2WMz9dNZSb63dQWMtUmnHshAoGAaGE8\nJmWOj78fjF3dp2Bq3bqHnDRc883ZMp3FhImN5vb1GkhA1IPXfrwcWnP5DSSyRD0D\nVGVNFFTfK9J9Pc7dUGkoMYjzM+egPYAsqTiDB8OPDhxbXnttpQd0LMRyKPwj6AHh\nMN3a9agToWJmqXoY6ZMAEPr3+ON0zBigxud3LI0CgYAZILkY6IptiqpsoOMqMgRe\neTIk9U5o5zK+MvjJvk9aozezDZUBtXiiY7qOh98Gk5EvPE0+24szNcvjk9mRmbQm\nQ2DIRvS4/TKx4FL/K1fGXI/KA8xky05nTKg0z2UXX9xyw3OtWgxj1HGdDYC7i7aN\nG/R4iAS9Eb/rZCQqtUKs1Q==\n-----END PRIVATE KEY-----\n",
+  "client_email": "helpdesk-cedis@appspot.gserviceaccount.com",
+  "client_id": "107271799971845213080",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/helpdesk-cedis%40appspot.gserviceaccount.com"
+}

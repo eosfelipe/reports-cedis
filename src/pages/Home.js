@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import { ClimbingBoxLoader } from 'react-spinners'
+import useGoogleSheets from '../hooks/useGoogleSheets'
 const Home = () => {
   const [data, setData] = useState()
   const [loading, setLoading] = useState(true)
@@ -16,8 +17,11 @@ const Home = () => {
     }
   }
 
+  const { appendRow } = useGoogleSheets()
+
   useEffect(() => {
-    getData()
+    //getData() //from nocodeapi
+    appendRow(data)
   }, [])
 
   const handleDelete = async (rowIndex) => {
